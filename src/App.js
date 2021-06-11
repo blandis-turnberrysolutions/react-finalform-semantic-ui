@@ -80,6 +80,7 @@ function App() {
                         name={input.name}
                         value={input.value}
                         onChange={input.onChange}
+                        onBlur={input.onBlur}
                       />
                     )}
                   </FinalFormField>
@@ -107,6 +108,7 @@ function App() {
                         name={input.name}
                         value={input.value}
                         onChange={(e, v) => input.onChange(v.value)}
+                        onBlur={input.onBlur}
                       />
                     )}
                   </FinalFormField>
