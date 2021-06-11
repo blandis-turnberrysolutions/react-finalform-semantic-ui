@@ -66,8 +66,9 @@ function App() {
             <Container>
               <SemanticForm onSubmit={handleSubmit}>
                 <SemanticForm.Group widths="equal">
-                  <FinalFormField name="firstName">
-                    {({ input, meta }) => (
+                  <FinalFormField
+                    name="firstName"
+                    render={({ input, meta }) => (
                       <SemanticForm.Input
                         label="First name"
                         placeholder="First name"
@@ -79,9 +80,10 @@ function App() {
                         fluid
                       />
                     )}
-                  </FinalFormField>
-                  <FinalFormField name="lastName">
-                    {({ input, meta }) => (
+                  />
+                  <FinalFormField
+                    name="lastName"
+                    render={({ input, meta }) => (
                       <SemanticForm.Input
                         label="Last name"
                         placeholder="Last name"
@@ -93,11 +95,12 @@ function App() {
                         fluid
                       />
                     )}
-                  </FinalFormField>
+                  />
                 </SemanticForm.Group>
                 <SemanticForm.Group widths="equal">
-                  <FinalFormField name="interests">
-                    {({ input, meta }) => (
+                  <FinalFormField
+                    name="interests"
+                    render={({ input, meta }) => (
                       <SemanticForm.Select
                         label="Interests"
                         placeholder="Select Interests"
@@ -113,7 +116,7 @@ function App() {
                         options={interestOptions}
                       />
                     )}
-                  </FinalFormField>
+                  />
                 </SemanticForm.Group>
                 <Button primary>Submit</Button>
               </SemanticForm>
