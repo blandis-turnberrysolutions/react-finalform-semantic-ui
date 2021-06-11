@@ -87,10 +87,9 @@ function App() {
                 <SemanticForm.Group widths="equal">
                   <FinalFormField name="interests">
                     {({ input, meta }) => (
-                      <SemanticForm.Field
+                      <SemanticForm.Select
                         error={meta.touched && meta.error}
                         label="Interests"
-                        control={SemanticForm.Select}
                         multiple
                         search
                         selection
