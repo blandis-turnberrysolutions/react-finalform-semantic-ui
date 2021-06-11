@@ -89,7 +89,6 @@ function App() {
                   <FinalFormField name="interests">
                     {({ input, meta }) => (
                       <SemanticForm.Select
-                        error={meta.touched && meta.error}
                         label="Interests"
                         multiple
                         search
@@ -105,6 +104,7 @@ function App() {
                           { key: "Hiking", text: "Hiking", value: "Hiking" },
                           { key: "Biking", text: "Biking", value: "Biking" },
                         ]}
+                        error={meta.touched && meta.error}
                         name={input.name}
                         value={input.value}
                         onChange={(e, v) => input.onChange(v.value)}
