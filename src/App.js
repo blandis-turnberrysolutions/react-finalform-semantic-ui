@@ -37,6 +37,16 @@ const validateFormValues = (schema) => async (values) => {
 
 const validate = validateFormValues(validationSchema);
 
+const interestOptions = [
+  {
+    key: "Running",
+    text: "Running",
+    value: "Running",
+  },
+  { key: "Hiking", text: "Hiking", value: "Hiking" },
+  { key: "Biking", text: "Biking", value: "Biking" },
+];
+
 function App() {
   const onSubmit = (values) => {
     alert(JSON.stringify(values));
@@ -59,7 +69,6 @@ function App() {
                   <FinalFormField name="firstName">
                     {({ input, meta }) => (
                       <SemanticForm.Input
-                        fluid
                         label="First name"
                         placeholder="First name"
                         error={meta.touched && meta.error}
@@ -67,13 +76,13 @@ function App() {
                         value={input.value}
                         onChange={input.onChange}
                         onBlur={input.onBlur}
+                        fluid
                       />
                     )}
                   </FinalFormField>
                   <FinalFormField name="lastName">
                     {({ input, meta }) => (
                       <SemanticForm.Input
-                        fluid
                         label="Last name"
                         placeholder="Last name"
                         error={meta.touched && meta.error}
@@ -81,6 +90,7 @@ function App() {
                         value={input.value}
                         onChange={input.onChange}
                         onBlur={input.onBlur}
+                        fluid
                       />
                     )}
                   </FinalFormField>
@@ -90,25 +100,17 @@ function App() {
                     {({ input, meta }) => (
                       <SemanticForm.Select
                         label="Interests"
-                        multiple
-                        search
-                        selection
                         placeholder="Select Interests"
-                        fluid
-                        options={[
-                          {
-                            key: "Running",
-                            text: "Running",
-                            value: "Running",
-                          },
-                          { key: "Hiking", text: "Hiking", value: "Hiking" },
-                          { key: "Biking", text: "Biking", value: "Biking" },
-                        ]}
                         error={meta.touched && meta.error}
                         name={input.name}
                         value={input.value}
                         onChange={(e, v) => input.onChange(v.value)}
                         onBlur={input.onBlur}
+                        fluid
+                        multiple
+                        search
+                        selection
+                        options={interestOptions}
                       />
                     )}
                   </FinalFormField>
